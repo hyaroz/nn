@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DBD FPS Unlocker - Installation | Neron's Basement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+<link rel="icon" type="image/jpeg" href="icon.jpg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="top-nav" id="top-nav"></nav>
+<div class="layout">
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<aside class="sidebar-left" id="sidebar-left"></aside>
+
+<main class="main-content">
+<div class="breadcrumbs">
+<span class="material-symbols-rounded">home</span>
+> DBD FPS Unlocker >
+<span>Installation</span>
+</div>
+
+<div class="container">
+<h1>Installation Guide</h1>
+<div class="separator"></div>
+
+<p>Installing the FPS unlocker takes less than a minute. Make sure Dead by Daylight is fully updated through Steam or Epic before you begin.</p>
+
+<h2>Prerequisites</h2>
+<ul>
+<li>A legitimate installation of Dead by Daylight (Steam or Epic Games).</li>
+<li>Windows 10 or 11.</li>
+<li>Dead by Daylight fully closed — check the system tray to confirm the launcher isn't running in the background.</li>
+</ul>
+
+<h2>Step-by-Step Setup</h2>
+<ul>
+<li><strong>Step 1:</strong> Download the latest release from the project's GitHub repository.</li>
+<li><strong>Step 2:</strong> Extract the archive. You should see <code>DBD-FPS-Unlocker.exe</code> and a <code>Engine.ini</code> patch file.</li>
+<li><strong>Step 3:</strong> Run <code>DBD-FPS-Unlocker.exe</code> as administrator. The tool detects your DBD install path automatically — if it can't find it, browse to the game folder manually (typically under <code>Steam\steamapps\common\Dead by Daylight</code>).</li>
+<li><strong>Step 4:</strong> Click <strong>Apply Patch</strong>. The unlocker backs up your original config and drops the override into the correct <code>Engine\Config</code> directory.</li>
+<li><strong>Step 5:</strong> Launch Dead by Daylight normally through Steam or Epic. Open the in-game settings and disable V-Sync if you want to see uncapped frames — then verify your FPS with the built-in counter or a tool like MSI Afterburner.</li>
+</ul>
+
+<h2>Reverting the Patch</h2>
+<p>Run the unlocker again and click <strong>Restore Original</strong> to put the default config back. Your backup is stored alongside the tool as <code>Engine.ini.bak</code>.</p>
+
+<div class="notice-box">
+<p><strong>After a game update:</strong> Behaviour occasionally overwrites config files during patches. If the cap returns, re-run the unlocker and apply the patch again. Always grab the latest release that matches your current game version.</p>
+</div>
+</div>
+</main>
+</div>
+
+<script src="navbar.js"></script>
+<script src="sidebar.js"></script>
+</body>
+</html>

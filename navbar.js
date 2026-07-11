@@ -1,11 +1,12 @@
 // navbar.js
-// Jedyne miejsce, w którym definiujemy górny pasek nawigacji (logo + link do GitHub + tryb ciemny).
-// Każda podstrona ma tylko <nav class="top-nav" id="top-nav"></nav>
-// a ten skrypt wypełnia ją zawartością.
+// Górny pasek nawigacji (hamburger + logo + GitHub + tryb ciemny).
 
 (function () {
   const navHTML = `
     <div class="top-nav-left">
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="material-symbols-rounded">menu</span>
+      </button>
       <div class="site-title" onclick="window.location.href='index.html'">
         <img src="icon.jpg" class="site-logo" alt="Logo">
         Neron's Basement

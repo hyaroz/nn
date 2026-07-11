@@ -1,7 +1,5 @@
 // sidebar.js
-// Jedyne miejsce, w którym definiujemy strukturę bocznego menu.
-// Każda podstrona ma tylko <aside class="sidebar-left" id="sidebar-left"></aside>
-// a ten skrypt wypełnia ją zawartością i podświetla aktywną stronę.
+// Boczne menu + obsługa mobilnego drawer'a.
 
 (function () {
   const sidebarHTML = `
@@ -58,6 +56,66 @@
     </div>
   `;
 
+  function isMobileMenu() {
+    return window.matchMedia("(max-width: 768px)").matches;
+  }
+
+  function getMenuElements() {
+    return {
+      sidebar: document.getElementById("sidebar-left"),
+      overlay: document.getElementById("sidebar-overlay"),
+      toggle: document.getElementById("menu-toggle"),
+    };
+  }
+
+  function setMenuOpen(open) {
+    const { sidebar, overlay, toggle } = getMenuElements();
+    if (!sidebar) return;
+
+    sidebar.classList.toggle("open", open);
+    if (overlay) overlay.classList.toggle("visible", open);
+    document.body.classList.toggle("menu-open", open);
+
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      const icon = toggle.querySelector(".material-symbols-rounded");
+      if (icon) icon.textContent = open ? "close" : "menu";
+    }
+  }
+
+  function closeMobileMenu() {
+    if (isMobileMenu()) setMenuOpen(false);
+  }
+
+  function initMobileMenu() {
+    const { sidebar, overlay, toggle } = getMenuElements();
+    if (!sidebar || !toggle) return;
+
+    toggle.addEventListener("click", function () {
+      setMenuOpen(!sidebar.classList.contains("open"));
+    });
+
+    if (overlay) {
+      overlay.addEventListener("click", closeMobileMenu);
+    }
+
+    sidebar.querySelectorAll("a[href]").forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href && href !== "#") {
+        link.addEventListener("click", closeMobileMenu);
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (!isMobileMenu()) setMenuOpen(false);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeMobileMenu();
+    });
+  }
+
   function initSidebar() {
     const container = document.getElementById("sidebar-left");
     if (!container) return;
@@ -66,7 +124,6 @@
 
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-    // Podświetl aktywny link najwyższego poziomu (Intro, Tools I Use, itd.)
     const topLevelLinks = container.querySelectorAll("a.menu-link[data-page]");
     topLevelLinks.forEach((link) => {
       if (link.getAttribute("data-page") === currentPage) {
@@ -74,7 +131,6 @@
       }
     });
 
-    // Podświetl aktywny link w podmenu i rozwiń jego grupę
     const activeSubLink = container.querySelector(`.sub-menu a[data-page="${currentPage}"]`);
     if (activeSubLink) {
       activeSubLink.classList.add("active");
@@ -87,7 +143,6 @@
       }
     }
 
-    // Obsługa rozwijania/zwijania podmenu
     const dropdownToggles = container.querySelectorAll(".dropdown-toggle");
     dropdownToggles.forEach((toggle) => {
       toggle.addEventListener("click", function (e) {
@@ -103,6 +158,8 @@
         }
       });
     });
+
+    initMobileMenu();
   }
 
   if (document.readyState === "loading") {
