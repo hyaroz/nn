@@ -1,465 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hitman Peacock Powershell - Installation</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hitman Peacock Powershell - Installation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+<style>
+/* CSS Variables - New Theme (Warm Shadows & Golden Light) */
+:root {
+--bg-color: #262325;
+--nav-bg: #312c2e;
+--container-bg: #312c2e;
+--text-color: #c9c2c0;
+--heading-color: #f4ecea;
+--accent-color: #dfa168;
+--border-color: rgba(255, 255, 255, 0.05);
+--hover-bg: #403a3d;
+--icon-color: #ffffff;
+}
 
-    <style>
-        /* CSS Variables - New Theme (Warm Shadows & Golden Light) */
-        :root {
-            --bg-color: #262325; 
-            --nav-bg: #312c2e; 
-            --container-bg: #312c2e; 
-            --text-color: #c9c2c0; 
-            --heading-color: #f4ecea; 
-            --accent-color: #dfa168; 
-            --border-color: rgba(255, 255, 255, 0.05); 
-            --hover-bg: #403a3d; 
-            --icon-color: #ffffff; 
-        }
+body {
+margin: 0;
+padding: 0;
+background-color: var(--bg-color);
+color: var(--text-color);
+font-family: 'Inter', sans-serif;
+background-image:
+linear-gradient(var(--border-color) 1px, transparent 1px),
+linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+background-size: 30px 30px;
+display: flex;
+flex-direction: column;
+height: 100vh;
+}
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Inter', sans-serif;
-            background-image: 
-                linear-gradient(var(--border-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
-            background-size: 30px 30px; 
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
+.material-symbols-rounded {
+color: var(--icon-color);
+font-size: 20px;
+width: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+}
 
-        .material-symbols-rounded {
-            color: var(--icon-color);
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+/* --- TOP NAVIGATION BAR --- */
+.top-nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+background-color: var(--nav-bg);
+border-bottom: 1px solid var(--border-color);
+height: 45px;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
 
-        /* --- TOP NAVIGATION BAR --- */
-        .top-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: var(--nav-bg);
-            border-bottom: 1px solid var(--border-color);
-            height: 45px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
+.top-nav-left {
+display: flex;
+align-items: center;
+gap: 25px;
+}
 
-        .top-nav-left {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
+.site-title {
+font-weight: 900;
+color: var(--heading-color);
+display: flex;
+align-items: center;
+gap: 12px;
+font-size: 1.1em;
+cursor: pointer;
+user-select: none;
+}
 
-        .site-title {
-            font-weight: 900;
-            color: var(--heading-color);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.1em; 
-            cursor: pointer; 
-            user-select: none;
-        }
+.site-logo {
+width: 28px;
+height: 28px;
+border-radius: 6px;
+object-fit: cover;
+display: block;
+}
 
-        .site-logo {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px; 
-            object-fit: cover; 
-            display: block;
-        }
+.top-nav-right {
+display: flex;
+align-items: center;
+gap: 20px;
+font-size: 0.9em;
+font-weight: 700;
+color: var(--heading-color);
+}
 
-        .top-nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            font-size: 0.9em;
-            font-weight: 700;
-            color: var(--heading-color);
-        }
+.github-icon-link {
+display: flex;
+align-items: center;
+justify-content: center;
+transition: transform 0.2s ease;
+text-decoration: none !important;
+}
 
-        .github-icon-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s ease;
-            text-decoration: none !important;
-        }
+.github-icon-link svg {
+transition: fill 0.2s ease;
+}
 
-        .github-icon-link svg {
-            transition: fill 0.2s ease;
-        }
+.github-icon-link:hover svg {
+fill: var(--accent-color);
+}
 
-        .github-icon-link:hover svg {
-            fill: var(--accent-color);
-        }
+.github-icon-link:hover {
+transform: scale(1.1);
+}
 
-        .github-icon-link:hover {
-            transform: scale(1.1);
-        }
+.dark-mode-icon {
+font-size: 26px !important;
+cursor: pointer;
+transition: transform 0.2s ease, color 0.2s ease;
+}
 
-        .dark-mode-icon {
-            font-size: 26px !important;
-            cursor: pointer;
-            transition: transform 0.2s ease, color 0.2s ease;
-        }
+.dark-mode-icon:hover {
+color: var(--accent-color);
+transform: scale(1.1);
+}
 
-        .dark-mode-icon:hover {
-            color: var(--accent-color);
-            transform: scale(1.1);
-        }
+/* --- MAIN PAGE LAYOUT --- */
+.layout {
+display: flex;
+flex: 1;
+overflow: hidden;
+}
 
-        /* --- MAIN PAGE LAYOUT --- */
-        .layout {
-            display: flex;
-            flex: 1;
-            overflow: hidden;
-        }
+.sidebar-left {
+width: 260px;
+background-color: rgba(38, 35, 37, 0.9);
+border-right: 1px solid var(--border-color);
+padding: 20px 0;
+overflow-y: auto;
+}
 
-        .sidebar-left {
-            width: 260px;
-            background-color: rgba(38, 35, 37, 0.9);
-            border-right: 1px solid var(--border-color);
-            padding: 20px 0;
-            overflow-y: auto;
-        }
+.sidebar-section-label {
+padding: 0 20px;
+margin: 18px 10px 8px 10px;
+font-size: 0.72em;
+font-weight: 700;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+color: var(--text-color);
+opacity: 0.6;
+}
 
-        .menu-link {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 20px;
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.95em;
-            font-weight: 700;
-            transition: all 0.2s ease;
-            margin: 0 10px 5px 10px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
+.sidebar-section-label.first {
+margin-top: 5px;
+}
 
-        .menu-link:hover {
-            background-color: var(--hover-bg);
-            color: var(--heading-color);
-            text-decoration: none !important;
-        }
+.sidebar-section-label.accent {
+color: var(--accent-color);
+opacity: 1;
+font-size: 0.78em;
+}
 
-        .menu-link.active {
-            background-color: var(--hover-bg);
-            color: var(--heading-color);
-            border-left: 4px solid var(--accent-color);
-        }
+.menu-link {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 20px;
+color: var(--text-color);
+text-decoration: none;
+font-size: 0.95em;
+font-weight: 700;
+transition: all 0.2s ease;
+margin: 0 10px 5px 10px;
+border-radius: 8px;
+cursor: pointer;
+}
 
-        .menu-link-content {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+.menu-link:hover {
+background-color: var(--hover-bg);
+color: var(--heading-color);
+text-decoration: none !important;
+}
 
-        .menu-icon-right {
-            font-size: 16px;
-            color: var(--text-color);
-        }
+.menu-link.active {
+background-color: var(--hover-bg);
+color: var(--heading-color);
+border-left: 4px solid var(--accent-color);
+}
 
-        .sub-menu {
-            padding-left: 0;
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            margin-top: 2px;
-            margin-bottom: 10px;
-        }
+.menu-link-content {
+display: flex;
+align-items: center;
+gap: 12px;
+}
 
-        .sub-menu a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.85em;
-            font-weight: 700;
-            display: block;
-            padding: 10px 20px 10px 55px;
-            margin: 0 10px;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-        }
+.menu-icon-right {
+font-size: 16px;
+color: var(--text-color);
+}
 
-        .sub-menu a:hover {
-            background-color: var(--hover-bg);
-            color: var(--heading-color);
-            text-decoration: none !important;
-        }
+.sub-menu {
+padding-left: 0;
+display: none;
+flex-direction: column;
+gap: 4px;
+margin-top: 2px;
+margin-bottom: 10px;
+}
 
-        /* Aktywny element w podmenu (podświetlony na stałe) */
-        .sub-menu a.active {
-            background-color: var(--hover-bg);
-            color: var(--accent-color);
-        }
+.sub-menu a {
+color: var(--text-color);
+text-decoration: none;
+font-size: 0.85em;
+font-weight: 700;
+display: block;
+padding: 10px 20px 10px 55px;
+margin: 0 10px;
+border-radius: 8px;
+transition: all 0.2s ease;
+}
 
-        /* --- CENTER SECTION (MAIN CONTENT) --- */
-        .main-content {
-            flex: 1;
-            padding: 40px;
-            overflow-y: scroll; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
+.sub-menu a:hover {
+background-color: var(--hover-bg);
+color: var(--heading-color);
+text-decoration: none !important;
+}
 
-        .breadcrumbs {
-            width: 100%;
-            max-width: 800px;
-            font-size: 0.85em;
-            color: var(--text-color);
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-        }
+.sub-menu a.active {
+background-color: var(--hover-bg);
+color: var(--accent-color);
+}
 
-        .breadcrumbs .material-symbols-rounded {
-            font-size: 18px;
-        }
+/* --- CENTER SECTION (MAIN CONTENT) --- */
+.main-content {
+flex: 1;
+padding: 40px;
+overflow-y: scroll;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+}
 
-        .breadcrumbs span {
-            color: var(--accent-color);
-            background-color: rgba(223, 161, 104, 0.1); 
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
+.breadcrumbs {
+width: 100%;
+max-width: 800px;
+font-size: 0.85em;
+color: var(--text-color);
+margin-bottom: 30px;
+display: flex;
+align-items: center;
+gap: 10px;
+font-weight: 700;
+}
 
-        .container {
-            background-color: var(--container-bg);
-            max-width: 800px;
-            width: 100%;
-            padding: 50px;
-            border-radius: 12px;
-            box-sizing: border-box;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-        }
+.breadcrumbs .material-symbols-rounded {
+font-size: 18px;
+}
 
-        h1 {
-            color: var(--heading-color);
-            font-size: 3.5em;
-            font-weight: 900;
-            letter-spacing: -1.5px;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
+.breadcrumbs span {
+color: var(--accent-color);
+background-color: rgba(223, 161, 104, 0.1);
+padding: 4px 10px;
+border-radius: 6px;
+}
 
-        .separator {
-            width: 120px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-color), transparent);
-            margin-bottom: 35px;
-            border-radius: 2px;
-        }
+.container {
+background-color: var(--container-bg);
+max-width: 800px;
+width: 100%;
+padding: 50px;
+border-radius: 12px;
+box-sizing: border-box;
+border: 1px solid var(--border-color);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
 
-        h2 {
-            color: var(--heading-color);
-            font-size: 1.8em;
-            font-weight: 900;
-            margin-top: 40px;
-            margin-bottom: 25px;
-            border-top: 1px dashed var(--border-color);
-            padding-top: 30px;
-        }
+h1 {
+color: var(--heading-color);
+font-size: 3.5em;
+font-weight: 900;
+letter-spacing: -1.5px;
+margin-top: 0;
+margin-bottom: 15px;
+}
 
-        p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.05em;
-        }
+.separator {
+width: 120px;
+height: 4px;
+background: linear-gradient(90deg, var(--accent-color), transparent);
+margin-bottom: 35px;
+border-radius: 2px;
+}
 
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.2s;
-        }
+h2 {
+color: var(--heading-color);
+font-size: 1.8em;
+font-weight: 900;
+margin-top: 40px;
+margin-bottom: 25px;
+border-top: 1px dashed var(--border-color);
+padding-top: 30px;
+}
 
-        .container a:hover {
-            color: #f0be95; 
-            text-decoration: underline;
-        }
+p {
+line-height: 1.8;
+margin-bottom: 20px;
+font-size: 1.05em;
+}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+a {
+color: var(--accent-color);
+text-decoration: none;
+font-weight: 700;
+transition: color 0.2s;
+}
 
-        li {
-            margin-bottom: 25px;
-            line-height: 1.7;
-            padding-left: 20px;
-            position: relative;
-        }
+.container a:hover {
+color: #f0be95;
+text-decoration: underline;
+}
 
-        li::before {
-            content: "▹";
-            color: var(--accent-color);
-            font-size: 1.2em;
-            position: absolute;
-            left: 0;
-            top: -2px;
-        }
-        
-        /* Stylizacja dla fragmentów kodu np. nazw plików lub komend terminala */
-        code {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-            color: var(--accent-color);
-            font-size: 0.9em;
-        }
+ul {
+list-style-type: none;
+padding: 0;
+}
 
-    </style>
+li {
+margin-bottom: 25px;
+line-height: 1.7;
+padding-left: 20px;
+position: relative;
+}
+
+li::before {
+content: "▹";
+color: var(--accent-color);
+font-size: 1.2em;
+position: absolute;
+left: 0;
+top: -2px;
+}
+
+code {
+background-color: rgba(255, 255, 255, 0.05);
+padding: 2px 6px;
+border-radius: 4px;
+font-family: monospace;
+color: var(--accent-color);
+font-size: 0.9em;
+}
+</style>
 </head>
 <body>
+<nav class="top-nav">
+<div class="top-nav-left">
+<div class="site-title" onclick="window.location.href='index.html'">
+<img src="icon.jpg" class="site-logo" alt="Logo">
+Neron's Basement
+</div>
+</div>
+<div class="top-nav-right">
+<a href="https://github.com/TWOJA-NAZWA/Neron-Basement" target="_blank" class="github-icon-link" title="Source Code">
+<svg height="22" width="22" viewBox="0 0 16 16" fill="var(--heading-color)">
+<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+</a>
+<span class="material-symbols-rounded dark-mode-icon" title="Toggle Theme">dark_mode</span>
+</div>
+</nav>
+<div class="layout">
+<aside class="sidebar-left" id="sidebar-left"></aside>
 
-    <nav class="top-nav">
-        <div class="top-nav-left">
-            <div class="site-title" onclick="window.location.href='index.html'">
-                <img src="icon.jpg" class="site-logo" alt="Logo">
-                Neron's Basement
-            </div>
-        </div>
-        
-        <div class="top-nav-right">
-            <a href="https://github.com/TWOJA-NAZWA/Neron-Basement" target="_blank" class="github-icon-link" title="Source Code">
-                <svg height="22" width="22" viewBox="0 0 16 16" fill="var(--heading-color)">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                </svg>
-            </a>
-            <span class="material-symbols-rounded dark-mode-icon" title="Toggle Theme">dark_mode</span>
-        </div>
-    </nav>
+<main class="main-content">
+<div class="breadcrumbs">
+<span class="material-symbols-rounded">home</span>
+> Hitman Peacock Powershell >
+<span>Installation</span>
+</div>
 
-    <div class="layout">
-        
-        <aside class="sidebar-left">
-            
-            <a href="index.html" class="menu-link">
-                <div class="menu-link-content">
-                    <span class="material-symbols-rounded">home</span>
-                    Intro
-                </div>
-            </a>
-            
-            <a href="#" class="menu-link dropdown-toggle">
-                <div class="menu-link-content">
-                    <span class="material-symbols-rounded">history</span>
-                    DepotDowngrader
-                </div>
-                <span class="material-symbols-rounded menu-icon-right">keyboard_arrow_down</span>
-            </a>
-            <div class="sub-menu">
-                <a href="depot-info.html">Info</a>
-                <a href="depot-install.html">Installation</a>
-            </div>
+<div class="container">
+<h1>Installation Guide</h1>
+<div class="separator"></div>
 
-            <a href="#" class="menu-link dropdown-toggle">
-                <div class="menu-link-content">
-                    <span class="material-symbols-rounded">bolt</span>
-                    DBD FPS Unlocker
-                </div>
-                <span class="material-symbols-rounded menu-icon-right">keyboard_arrow_down</span>
-            </a>
-            <div class="sub-menu">
-                <a href="dbd-info.html">Info</a>
-                <a href="dbd-install.html">Installation</a>
-            </div>
+<p>Setting up the Hitman Peacock Powershell script is designed to be as frictionless as possible. Follow the steps below to get your local server environment running in minutes.</p>
 
-            <a href="#" class="menu-link dropdown-toggle">
-                <div class="menu-link-content">
-                    <span class="material-symbols-rounded">dns</span>
-                    Hitman Peacock Powershell
-                </div>
-                <span class="material-symbols-rounded menu-icon-right">keyboard_arrow_up</span>
-            </a>
-            <div class="sub-menu" style="display: flex;">
-                <a href="hitman-info.html">Info</a>
-                <a href="hitman-install.html" class="active">Installation</a>
-            </div>
+<h2>Prerequisites</h2>
+<ul>
+<li>A legitimate, official installation of the Hitman trilogy purchased from a supported digital storefront.</li>
+<li>Windows PowerShell (comes pre-installed with Windows 10/11).</li>
+<li>Administrator privileges on your machine to map local network ports correctly.</li>
+</ul>
 
-        </aside>
+<h2>Step-by-Step Setup</h2>
+<ul>
+<li><strong>Step 1:</strong> Download the latest release archive from the project's GitHub repository.</li>
+<li><strong>Step 2:</strong> Extract the contents into a dedicated folder anywhere on your drive (e.g., <code>C:\Peacock</code>).</li>
+<li><strong>Step 3:</strong> Right-click on the <code>Install-Peacock.ps1</code> script and select <strong>"Run with PowerShell"</strong>.</li>
+<li><strong>Step 4:</strong> If prompted by User Account Control (UAC), click "Yes" to grant the necessary permissions for modifying the local host file.</li>
+<li><strong>Step 5:</strong> Wait for the script to automatically fetch the dependencies and configure the backend. Once the terminal displays "Server is listening", you are ready to launch the game.</li>
+</ul>
+</div>
+</main>
+</div>
 
-        <main class="main-content">
-            
-            <div class="breadcrumbs">
-                <span class="material-symbols-rounded">home</span> 
-                > Hitman Peacock Powershell > 
-                <span>Installation</span>
-            </div>
-
-            <div class="container">
-                
-                <h1>Installation Guide</h1>
-                <div class="separator"></div>
-                
-                <p>Setting up the Hitman Peacock Powershell script is designed to be as frictionless as possible. Follow the steps below to get your local server environment running in minutes.</p>
-                
-                <h2>Prerequisites</h2>
-                <ul>
-                    <li>A clean installation of the Hitman trilogy (all digital storefronts and modified versions are supported).</li>
-                    <li>Windows PowerShell (comes pre-installed with Windows 10/11).</li>
-                    <li>Administrator privileges on your machine to map local network ports correctly.</li>
-                </ul>
-
-                <h2>Step-by-Step Setup</h2>
-                <ul>
-                    <li><strong>Step 1:</strong> Download the latest release archive from the project's GitHub repository.</li>
-                    <li><strong>Step 2:</strong> Extract the contents into a dedicated folder anywhere on your drive (e.g., <code>C:\Peacock</code>).</li>
-                    <li><strong>Step 3:</strong> Right-click on the <code>Install-Peacock.ps1</code> script and select <strong>"Run with PowerShell"</strong>.</li>
-                    <li><strong>Step 4:</strong> If prompted by User Account Control (UAC), click "Yes" to grant the necessary permissions for modifying the local host file.</li>
-                    <li><strong>Step 5:</strong> Wait for the script to automatically fetch the dependencies and configure the backend. Once the terminal displays "Server is listening", you are ready to launch the game.</li>
-                </ul>
-
-            </div>
-        </main>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-            
-            dropdownToggles.forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault(); 
-                    
-                    const subMenu = this.nextElementSibling;
-                    const arrowIcon = this.querySelector('.menu-icon-right');
-                    
-                    if (subMenu.style.display === "flex") {
-                        subMenu.style.display = "none";
-                        arrowIcon.textContent = "keyboard_arrow_down";
-                    } else {
-                        subMenu.style.display = "flex";
-                        arrowIcon.textContent = "keyboard_arrow_up";
-                    }
-                });
-            });
-        });
-    </script>
-
+<script src="sidebar.js"></script>
 </body>
 </html>

@@ -40,9 +40,11 @@ height: 100vh;
 .material-symbols-rounded {
 color: var(--icon-color);
 font-size: 20px;
+width: 20px;
 display: flex;
 align-items: center;
 justify-content: center;
+flex-shrink: 0;
 }
 
 /* --- TOP NAVIGATION BAR --- */
@@ -135,6 +137,27 @@ background-color: rgba(38, 35, 37, 0.9);
 border-right: 1px solid var(--border-color);
 padding: 20px 0;
 overflow-y: auto;
+}
+
+.sidebar-section-label {
+padding: 0 20px;
+margin: 18px 10px 8px 10px;
+font-size: 0.72em;
+font-weight: 700;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+color: var(--text-color);
+opacity: 0.6;
+}
+
+.sidebar-section-label.first {
+margin-top: 5px;
+}
+
+.sidebar-section-label.accent {
+color: var(--accent-color);
+opacity: 1;
+font-size: 0.78em;
 }
 
 .menu-link {
@@ -329,50 +352,7 @@ Neron's Basement
 </div>
 </nav>
 <div class="layout">
-<aside class="sidebar-left">
-<a href="index.html" class="menu-link">
-<div class="menu-link-content">
-<span class="material-symbols-rounded">home</span>
-Intro
-</div>
-</a>
-
-<a href="#" class="menu-link dropdown-toggle">
-<div class="menu-link-content">
-<span class="material-symbols-rounded">history</span>
-DepotDowngrader
-</div>
-<span class="material-symbols-rounded menu-icon-right">keyboard_arrow_up</span>
-</a>
-<div class="sub-menu" style="display: flex;">
-<a href="depot-info.html" class="active">Info</a>
-<a href="depot-install.html">Installation</a>
-</div>
-
-<a href="#" class="menu-link dropdown-toggle">
-<div class="menu-link-content">
-<span class="material-symbols-rounded">bolt</span>
-DBD FPS Unlocker
-</div>
-<span class="material-symbols-rounded menu-icon-right">keyboard_arrow_down</span>
-</a>
-<div class="sub-menu">
-<a href="dbd-info.html">Info</a>
-<a href="dbd-install.html">Installation</a>
-</div>
-
-<a href="#" class="menu-link dropdown-toggle">
-<div class="menu-link-content">
-<span class="material-symbols-rounded">dns</span>
-Hitman Peacock Powershell
-</div>
-<span class="material-symbols-rounded menu-icon-right">keyboard_arrow_down</span>
-</a>
-<div class="sub-menu">
-<a href="hitman-info.html">Info</a>
-<a href="hitman-install.html">Installation</a>
-</div>
-</aside>
+<aside class="sidebar-left" id="sidebar-left"></aside>
 
 <main class="main-content">
 <div class="breadcrumbs">
@@ -403,24 +383,6 @@ Hitman Peacock Powershell
 </main>
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-dropdownToggles.forEach(toggle => {
-toggle.addEventListener('click', function(e) {
-e.preventDefault();
-const subMenu = this.nextElementSibling;
-const arrowIcon = this.querySelector('.menu-icon-right');
-if (subMenu.style.display === "flex") {
-subMenu.style.display = "none";
-arrowIcon.textContent = "keyboard_arrow_down";
-} else {
-subMenu.style.display = "flex";
-arrowIcon.textContent = "keyboard_arrow_up";
-}
-});
-});
-});
-</script>
+<script src="sidebar.js"></script>
 </body>
 </html>
