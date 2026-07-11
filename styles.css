@@ -547,6 +547,7 @@ code {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding-top: env(safe-area-inset-top);
   }
 
   .sidebar-overlay.visible {
@@ -566,6 +567,7 @@ code {
     transition: transform 0.3s ease;
     border-right: 1px solid var(--border-color);
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    padding-top: env(safe-area-inset-top);
   }
 
   .sidebar-left.open {
