@@ -12,7 +12,7 @@
       </div>
     </a>
 
-    <a href="#" class="menu-link">
+    <a href="tools.html" class="menu-link" data-page="tools.html">
       <div class="menu-link-content">
         <span class="material-symbols-rounded">construction</span>
         Tools I Use
@@ -66,11 +66,13 @@
 
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-    // Podświetl "Intro" jeśli jesteśmy na stronie głównej
-    const introLink = container.querySelector('[data-page="index.html"]');
-    if (introLink && (currentPage === "index.html" || currentPage === "")) {
-      introLink.classList.add("active");
-    }
+    // Podświetl aktywny link najwyższego poziomu (Intro, Tools I Use, itd.)
+    const topLevelLinks = container.querySelectorAll("a.menu-link[data-page]");
+    topLevelLinks.forEach((link) => {
+      if (link.getAttribute("data-page") === currentPage) {
+        link.classList.add("active");
+      }
+    });
 
     // Podświetl aktywny link w podmenu i rozwiń jego grupę
     const activeSubLink = container.querySelector(`.sub-menu a[data-page="${currentPage}"]`);
