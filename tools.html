@@ -320,6 +320,16 @@ transform: translateY(-3px);
 border-color: rgba(223, 161, 104, 0.3);
 }
 
+.tool-card-image {
+width: 44px;
+height: 44px;
+border-radius: 10px;
+object-fit: cover;
+background-color: rgba(255, 255, 255, 0.03);
+border: 1px solid var(--border-color);
+display: block;
+}
+
 .tool-card-icon {
 width: 44px;
 height: 44px;
@@ -364,7 +374,6 @@ transition: color 0.2s;
 
 .tool-card-link:hover {
 color: #f0be95;
-text-decoration: underline;
 }
 
 
@@ -407,12 +416,10 @@ Neron's Basement
 
 <!--
   SZABLON KARTY NARZĘDZIA — skopiuj poniższy blok dla każdego kolejnego narzędzia
-  i podmień: ikonę (material-symbols-rounded), tytuł, opis oraz link.
+  i podmień: obrazek (plik .png/.jpg wrzucony obok index.html), tytuł, opis oraz link.
 
   <div class="tool-card">
-    <div class="tool-card-icon">
-      <span class="material-symbols-rounded">TU_WSTAW_IKONE</span>
-    </div>
+    <img src="nazwa-pliku.png" alt="Nazwa narzędzia" class="tool-card-image">
     <h3 class="tool-card-title">Nazwa narzędzia</h3>
     <p class="tool-card-desc">Krótki opis co robi i dlaczego go używasz.</p>
     <a href="TU_WSTAW_LINK" target="_blank" class="tool-card-link">
@@ -423,23 +430,9 @@ Neron's Basement
 -->
 
 <div class="tool-card">
-<div class="tool-card-icon">
-<span class="material-symbols-rounded">terminal</span>
-</div>
-<h3 class="tool-card-title">OpenSteamTool</h3>
-<p class="tool-card-desc">A utility that enables access to Steam content, including unlocking unowned games and DLCs, automating manifest downloads, and managing protected files using decryption keys.</p>
-<a href="https://github.com/OpenSteam001/OpenSteamTool" target="_blank" class="tool-card-link">
-View project
-<span class="material-symbols-rounded" style="font-size:16px;width:16px;">arrow_outward</span>
-</a>
-</div>
-
-<div class="tool-card">
-<div class="tool-card-icon">
-<span class="material-symbols-rounded">code</span>
-</div>
-<h3 class="tool-card-title">Another Tool Here</h3>
-<p class="tool-card-desc">Another short description explaining what this one is for. Swap out the icon, title, and text.</p>
+<img src="program.png" alt="Example Tool Name" class="tool-card-image">
+<h3 class="tool-card-title">Example Tool Name</h3>
+<p class="tool-card-desc">Short description of what this tool does and why it's worth using — replace this with your own text.</p>
 <a href="#" target="_blank" class="tool-card-link">
 View project
 <span class="material-symbols-rounded" style="font-size:16px;width:16px;">arrow_outward</span>
@@ -447,9 +440,17 @@ View project
 </div>
 
 <div class="tool-card">
-<div class="tool-card-icon">
-<span class="material-symbols-rounded">settings</span>
+<img src="another-tool.png" alt="Another Tool Here" class="tool-card-image">
+<h3 class="tool-card-title">Another Tool Here</h3>
+<p class="tool-card-desc">Another short description explaining what this one is for. Swap out the image, title, and text.</p>
+<a href="#" target="_blank" class="tool-card-link">
+View project
+<span class="material-symbols-rounded" style="font-size:16px;width:16px;">arrow_outward</span>
+</a>
 </div>
+
+<div class="tool-card">
+<img src="third-tool.png" alt="Third Tool Slot" class="tool-card-image">
 <h3 class="tool-card-title">Third Tool Slot</h3>
 <p class="tool-card-desc">Just placeholder copy so you can see how the card looks filled in. Edit freely.</p>
 <a href="#" target="_blank" class="tool-card-link">
