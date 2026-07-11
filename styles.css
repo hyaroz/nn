@@ -275,6 +275,7 @@ body.menu-open {
   font-size: 0.85em;
   color: var(--text-color);
   margin-bottom: 30px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -538,7 +539,7 @@ code {
   .sidebar-overlay {
     display: block;
     position: fixed;
-    top: 0;
+    top: 45px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -556,17 +557,17 @@ code {
 
   .sidebar-left {
     position: fixed;
-    top: 0;
+    top: 45px;
     left: 0;
-    height: 100vh;
-    height: 100dvh;
+    height: calc(100vh - 45px);
+    height: calc(100dvh - 45px);
     width: min(280px, 85vw);
     z-index: 1001;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     border-right: 1px solid var(--border-color);
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
-    padding-top: 45px;
+    padding-top: 10px;
   }
 
   .sidebar-left.open {
