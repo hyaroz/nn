@@ -511,6 +511,7 @@ code {
 
   .top-nav {
     padding: 10px 14px;
+    height: 80px;
   }
 
   .menu-toggle {
