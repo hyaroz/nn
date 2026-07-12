@@ -472,6 +472,12 @@ code {
   display: block;
 }
 
+.tool-card-image.plain {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
 .tool-card-icon {
   width: 44px;
   height: 44px;
