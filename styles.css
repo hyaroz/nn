@@ -565,7 +565,7 @@ code {
     transition: transform 0.3s ease;
     border-right: 1px solid var(--border-color);
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
-    padding-top: 25px; /* DODANA LINIJKA: Obniża o 5px górną krawędź menu na telefonach */
+    padding-top: 30px; /* ZMIENIONA LINIJKA: Zwiększono z 25px na 30px, aby obniżyć menu o kolejne 5px na telefonach */
   }
 
   .sidebar-left.open {
@@ -648,3 +648,4 @@ code {
     padding: 22px 16px;
   }
 }
+
