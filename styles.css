@@ -290,11 +290,26 @@ body.menu-open {
   font-size: 18px;
 }
 
-.breadcrumbs span {
+.breadcrumbs span,
+.breadcrumbs a {
   color: var(--accent-color);
   background-color: rgba(223, 161, 104, 0.1);
   padding: 4px 10px;
   border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+  background-color: rgba(223, 161, 104, 0.25);
+  color: #f0be95;
+  text-decoration: none !important;
+}
+
+.breadcrumbs a span {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
 }
 
 .container {
