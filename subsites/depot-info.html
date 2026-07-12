@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DepotDowngrader - Info | Neron's Basement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+<link rel="icon" type="image/jpeg" href="../images/icon.jpg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav class="top-nav" id="top-nav"></nav>
+<div class="layout">
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<aside class="sidebar-left" id="sidebar-left"></aside>
+
+<main class="main-content">
+<div class="breadcrumbs">
+<a href="../index.html"><span class="material-symbols-rounded">home</span></a>
+> <span>DepotDowngrader</span> >
+<span>Info</span>
+</div>
+
+<div class="container">
+<h1>DepotDowngrader</h1>
+<div class="separator"></div>
+
+<p>DepotDowngrader is a lightweight wrapper around <a href="https://github.com/SteamRE/DepotDownloader" target="_blank">DepotDownloader</a> that makes it quick and easy to fetch a specific historical build (depot/manifest) of a Steam application instead of whatever version is currently live. It's meant for cases where an older build behaves better for you than the current one — better performance, a favorite mod still being compatible, or avoiding a patch that broke something you relied on.</p>
+
+<h2>Project Overview</h2>
+<p>Under the hood, the tool talks to Steam's content servers the same way the official client does, just letting you pick a manifest ID for the exact version you want instead of always grabbing the latest one. It handles the manifest lookup, authentication with your Steam account, and file placement so you don't have to run everything by hand from the command line.</p>
+
+<div class="notice-box">
+<p><strong>License requirement:</strong> DepotDowngrader only works for titles you already own on Steam. It authenticates through your own Steam account and downloads depots your account is entitled to — it does not provide, unlock, or grant access to any game or content you don't already have a valid license for.</p>
+</div>
+
+<h2>Why Downgrade a Depot?</h2>
+<p>Developers sometimes ship updates that remove features, break mod compatibility, or introduce regressions. Rolling back to a previous build lets you keep playing the version that worked for you until things are sorted out upstream, without touching anything outside of the game's own files.</p>
+
+<h2>Compatibility Note</h2>
+<p>This tool is built and tested against official, unmodified Steam installations. It assumes a legitimate, licensed copy of the game — using it with modified or illegitimately obtained game files is outside of its intended use and isn't something this project supports.</p>
+</div>
+</main>
+</div>
+
+<script src="../navbar.js"></script>
+<script src="../sidebar.js"></script>
+</body>
+</html>
