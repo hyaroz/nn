@@ -139,20 +139,9 @@ body.menu-open {
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.dark-mode-icon-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none !important;
-  transition: transform 0.2s ease;
-}
-
-.dark-mode-icon-link:hover {
-  transform: scale(1.1);
-}
-
-.dark-mode-icon-link:hover .dark-mode-icon {
+.dark-mode-icon:hover {
   color: var(--accent-color);
+  transform: scale(1.1);
 }
 
 /* --- MAIN PAGE LAYOUT --- */
@@ -272,7 +261,6 @@ body.menu-open {
 .main-content {
   flex: 1;
   padding: 40px;
-  padding-top: 20px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -287,6 +275,7 @@ body.menu-open {
   font-size: 0.85em;
   color: var(--text-color);
   margin-bottom: 30px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -300,22 +289,9 @@ body.menu-open {
 
 .breadcrumbs .material-symbols-rounded {
   font-size: 18px;
-  color: var(--accent-color);
-  background-color: rgba(223, 161, 104, 0.1);
-  padding: 4px 10px;
-  border-radius: 6px;
 }
 
-.breadcrumbs a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.breadcrumbs a:hover .material-symbols-rounded {
-  color: #f0be95;
-}
-
-.breadcrumbs span:not(:empty) {
+.breadcrumbs span {
   color: var(--accent-color);
   background-color: rgba(223, 161, 104, 0.1);
   padding: 4px 10px;
