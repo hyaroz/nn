@@ -28,16 +28,19 @@
 <h1>DBD FPS Unlocker</h1>
 <div class="separator"></div>
 
-<p>DBD FPS Unlocker is a small patch utility for Dead by Daylight that removes the engine's built-in frame rate cap. The game ships with a hard limit that keeps performance locked below what modern hardware can deliver — this tool lifts that restriction so you can run at your monitor's refresh rate or higher, depending on your setup.</p>
+<p>Dead by Daylight has a native cap of 120 FPS. If you have a high-refresh-rate monitor (144Hz, 240Hz, etc.), the game won't go past 120 no matter how powerful your PC is.</p>
 
-<h2>Project Overview</h2>
-<p>Dead by Daylight runs on Unreal Engine 4, which supports uncapped frame rates out of the box. The developers intentionally clamp FPS through engine configuration. DBD FPS Unlocker applies a targeted config override at launch so the renderer no longer enforces that cap, without touching gameplay logic, networking, or anti-cheat components.</p>
+<p>This tool simply removes that limit. No bloat, no background processes — just a lightweight patch that lets the game run at whatever your hardware can push.</p>
 
-<h2>What You Can Expect</h2>
-<p>On a capable PC, uncapping FPS typically means smoother camera movement, reduced input latency, and a more responsive feel during chases and skill checks. Results vary by GPU, driver version, and in-game graphics settings — the unlocker removes the limit; it does not magically boost performance beyond what your hardware can handle.</p>
+<p>Just keep in mind — you need to set a limit your PC can actually handle. If your FPS drops below whatever you've set, the character starts running in slow-motion. Looks hilarious, but it completely ruins any chase.</p>
 
-<h2>Compatibility Note</h2>
-<p>This utility is intended for the official Steam or Epic Games version of Dead by Daylight on Windows. It requires a legitimate, up-to-date game installation. Support for modified clients or pirated copies is not provided, and using third-party patches always carries a risk of incompatibility after game updates — check the release page for the latest supported game version before applying.</p>
+<h2>Quick Notes</h2>
+<ul>
+<li>Works with Steam and Epic Games versions on Windows</li>
+<li>No installation needed — just run the .exe</li>
+<li>Requires administrator permissions so it can modify the engine config file without issues</li>
+<li>Replaces the engine config file and sets it to read-only — game updates won't touch it</li>
+</ul>
 </div>
 </main>
 </div>
