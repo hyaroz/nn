@@ -20,16 +20,16 @@ This site serves as a showcase for my projects and tools that I've built over ti
 
 ## 📦 Projects
 
-### <a href="https://hyaroz.github.io/nn/subpages/dbd-info.html" style="text-decoration: none; color: inherit;">DBD FPS Unlocker</a>
+### [DBD FPS Unlocker](https://hyaroz.github.io/nn/subpages/dbd-info.html)
 An optimization utility that removes the engine frame rate limits in Dead by Daylight, providing a much smoother experience.
 
-- **<a href="https://hyaroz.github.io/nn/subpages/dbd-info.html" style="text-decoration: none;">Info</a>** - Learn more about the project
-- **<a href="https://hyaroz.github.io/nn/subpages/dbd-install.html" style="text-decoration: none;">Installation</a>** - Get started
+- **[Info](https://hyaroz.github.io/nn/subpages/dbd-info.html)** - Learn more about the project
+- **[Installation](https://hyaroz.github.io/nn/subpages/dbd-install.html)** - Get started
 
-### <a href="https://hyaroz.github.io/nn/subpages/hitman-info.html" style="text-decoration: none; color: inherit;">Hitman Peacock Powershell</a>
+### [Hitman Peacock Powershell](https://hyaroz.github.io/nn/subpages/hitman-info.html)
 A PowerShell automation script idea that will handle the entire setup of the Peacock local server emulator for the Hitman trilogy — no manual editing of host files or configuration needed. Currently in early planning phase (v0.0.0).
 
-- **<a href="https://hyaroz.github.io/nn/subpages/hitman-info.html" style="text-decoration: none;">Info</a>** - Learn more about the project
+- **[Info](https://hyaroz.github.io/nn/subpages/hitman-info.html)** - Learn more about the project
 
 ---
 
@@ -37,13 +37,13 @@ A PowerShell automation script idea that will handle the entire setup of the Pea
 
 A curated list of software, utilities and apps I rely on daily. No fluff or filler — just the absolute best tools that earned a permanent spot on my machine.
 
-**<a href="https://hyaroz.github.io/nn/subpages/tools.html" style="text-decoration: none;">View Tools</a>**
+**[View Tools](https://hyaroz.github.io/nn/subpages/tools.html)**
 
 ---
 
 ## 🌐 Live Site
 
-Check out the live version: <a href="https://hyaroz.github.io/nn" style="text-decoration: none;">hyaroz.github.io/nn</a>
+Check out the live version: [hyaroz.github.io/nn](https://hyaroz.github.io/nn)
 
 ---
 
@@ -70,7 +70,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 <div align="center">
 
-Made with ❤️ by <a href="https://github.com/hyaroz" style="text-decoration: none;">Neron</a>
+Made with ❤️ by [Neron](https://github.com/hyaroz)
 
 [![GitHub Stars](https://img.shields.io/github/stars/hyaroz/nn?style=social)](https://github.com/hyaroz/nn/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/hyaroz/nn?style=social)](https://github.com/hyaroz/nn/network/members)
