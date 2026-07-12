@@ -20,16 +20,16 @@ This site serves as a showcase for my projects and tools that I've built over ti
 
 ## 📦 Projects
 
-### [DBD FPS Unlocker](https://hyaroz.github.io/nn/subpages/dbd-info.html)
+### DBD FPS Unlocker
 An optimization utility that removes the engine frame rate limits in Dead by Daylight, providing a much smoother experience.
 
-- **[Info](https://hyaroz.github.io/nn/subpages/dbd-info.html)** - Learn more about the project
-- **[Installation](https://hyaroz.github.io/nn/subpages/dbd-install.html)** - Get started
+- **Info** — https://hyaroz.github.io/nn/subpages/dbd-info.html
+- **Installation** — https://hyaroz.github.io/nn/subpages/dbd-install.html
 
-### [Hitman Peacock Powershell](https://hyaroz.github.io/nn/subpages/hitman-info.html)
+### Hitman Peacock Powershell
 A PowerShell automation script idea that will handle the entire setup of the Peacock local server emulator for the Hitman trilogy — no manual editing of host files or configuration needed. Currently in early planning phase (v0.0.0).
 
-- **[Info](https://hyaroz.github.io/nn/subpages/hitman-info.html)** - Learn more about the project
+- **Info** — https://hyaroz.github.io/nn/subpages/hitman-info.html
 
 ---
 
@@ -37,13 +37,13 @@ A PowerShell automation script idea that will handle the entire setup of the Pea
 
 A curated list of software, utilities and apps I rely on daily. No fluff or filler — just the absolute best tools that earned a permanent spot on my machine.
 
-**[View Tools](https://hyaroz.github.io/nn/subpages/tools.html)**
+**View Tools** — https://hyaroz.github.io/nn/subpages/tools.html
 
 ---
 
 ## 🌐 Live Site
 
-Check out the live version: [hyaroz.github.io/nn](https://hyaroz.github.io/nn)
+Check out the live version at https://hyaroz.github.io/nn
 
 ---
 
