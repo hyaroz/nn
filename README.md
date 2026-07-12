@@ -20,12 +20,6 @@ This site serves as a showcase for my projects and tools that I've built over ti
 
 ## 📦 Projects
 
-### [DepotDowngrader](https://hyaroz.github.io/nn/subpages/depot-info.html)
-A simple tool designed to roll back application depots to their previous versions efficiently. Built as a lightweight wrapper around [DepotDownloader](https://github.com/SteamRE/DepotDownloader).
-
-- **[Info](https://hyaroz.github.io/nn/subpages/depot-info.html)** - Learn more about the project
-- **[Installation](https://hyaroz.github.io/nn/subpages/depot-install.html)** - Get started
-
 ### [DBD FPS Unlocker](https://hyaroz.github.io/nn/subpages/dbd-info.html)
 An optimization utility that removes the engine frame rate limits in Dead by Daylight, providing a much smoother experience.
 
@@ -36,7 +30,6 @@ An optimization utility that removes the engine frame rate limits in Dead by Day
 An automation script designed to seamlessly install and configure the Peacock project for your setup.
 
 - **[Info](https://hyaroz.github.io/nn/subpages/hitman-info.html)** - Learn more about the project
-- **[Installation](https://hyaroz.github.io/nn/subpages/hitman-install.html)** - Get started
 
 ---
 
