@@ -27,7 +27,7 @@ An optimization utility that removes the engine frame rate limits in Dead by Day
 - **[Installation](https://hyaroz.github.io/nn/subpages/dbd-install.html)** - Get started
 
 ### [Hitman Peacock Powershell](https://hyaroz.github.io/nn/subpages/hitman-info.html)
-An automation script designed to seamlessly install and configure the Peacock project for your setup.
+A PowerShell automation script idea that will handle the entire setup of the Peacock local server emulator for the Hitman trilogy — no manual editing of host files or configuration needed. Currently in early planning phase (v0.0.0).
 
 - **[Info](https://hyaroz.github.io/nn/subpages/hitman-info.html)** - Learn more about the project
 
