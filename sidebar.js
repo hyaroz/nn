@@ -126,7 +126,8 @@
 
     const topLevelLinks = container.querySelectorAll("a.menu-link[data-page]");
     topLevelLinks.forEach((link) => {
-      if (link.getAttribute("data-page") === currentPage) {
+      const dataPage = link.getAttribute("data-page");
+      if (dataPage === currentPage || dataPage === "../index.html" && currentPage === "index.html") {
         link.classList.add("active");
       }
     });
