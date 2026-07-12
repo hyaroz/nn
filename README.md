@@ -20,23 +20,23 @@ This site serves as a showcase for my projects and tools that I've built over ti
 
 ## 📦 Projects
 
-### [DepotDowngrader](subsites/depot-info.html)
+### [DepotDowngrader](https://hyaroz.github.io/nn/subsites/depot-info.html)
 A simple tool designed to roll back application depots to their previous versions efficiently. Built as a lightweight wrapper around [DepotDownloader](https://github.com/SteamRE/DepotDownloader).
 
-- **[Info](subsites/depot-info.html)** - Learn more about the project
-- **[Installation](subsites/depot-install.html)** - Get started
+- **[Info](https://hyaroz.github.io/nn/subsites/depot-info.html)** - Learn more about the project
+- **[Installation](https://hyaroz.github.io/nn/subsites/depot-install.html)** - Get started
 
-### [DBD FPS Unlocker](subsites/dbd-info.html)
+### [DBD FPS Unlocker](https://hyaroz.github.io/nn/subsites/dbd-info.html)
 An optimization utility that removes the engine frame rate limits in Dead by Daylight, providing a much smoother experience.
 
-- **[Info](subsites/dbd-info.html)** - Learn more about the project
-- **[Installation](subsites/dbd-install.html)** - Get started
+- **[Info](https://hyaroz.github.io/nn/subsites/dbd-info.html)** - Learn more about the project
+- **[Installation](https://hyaroz.github.io/nn/subsites/dbd-install.html)** - Get started
 
-### [Hitman Peacock Powershell](subsites/hitman-info.html)
+### [Hitman Peacock Powershell](https://hyaroz.github.io/nn/subsites/hitman-info.html)
 An automation script designed to seamlessly install and configure the Peacock project for your setup.
 
-- **[Info](subsites/hitman-info.html)** - Learn more about the project
-- **[Installation](subsites/hitman-install.html)** - Get started
+- **[Info](https://hyaroz.github.io/nn/subsites/hitman-info.html)** - Learn more about the project
+- **[Installation](https://hyaroz.github.io/nn/subsites/hitman-install.html)** - Get started
 
 ---
 
@@ -44,7 +44,7 @@ An automation script designed to seamlessly install and configure the Peacock pr
 
 A curated list of software, utilities and apps I rely on daily. No fluff or filler — just the absolute best tools that earned a permanent spot on my machine.
 
-**[View Tools](subsites/tools.html)**
+**[View Tools](https://hyaroz.github.io/nn/subsites/tools.html)**
 
 ---
 
