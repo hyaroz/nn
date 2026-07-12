@@ -439,6 +439,7 @@ code {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  align-items: flex-start;
 }
 
 .tool-card:hover {
@@ -500,6 +501,93 @@ code {
 
 .tool-card-link:hover {
   color: #f0be95;
+}
+
+.tool-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+}
+
+.tool-card li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+.tool-card li::before {
+  content: "▹";
+  color: var(--accent-color);
+  font-size: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.tool-card .notice-box {
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background-color: rgba(223, 161, 104, 0.08);
+  border: 1px solid rgba(223, 161, 104, 0.25);
+  border-radius: 8px;
+}
+
+.tool-card .notice-box p {
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.tool-card .version-badge {
+  background-color: rgba(223, 161, 104, 0.1);
+  border: 1px solid rgba(223, 161, 104, 0.3);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  font-size: 0.85em;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.tool-card .status-badge {
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.85em;
+  font-weight: 700;
+  margin-bottom: 12px;
+  border: 1px solid;
+}
+
+.tool-card .status-badge.finished {
+  background-color: rgba(76, 175, 80, 0.15);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  color: #81c784;
+}
+
+.tool-card .status-badge.stopped {
+  background-color: rgba(255, 193, 7, 0.15);
+  border: 1px solid rgba(255, 193, 7, 0.4);
+  color: #ffd54f;
+}
+
+.tool-card .status-badge.abandoned {
+  background-color: rgba(244, 67, 54, 0.15);
+  border: 1px solid rgba(244, 67, 54, 0.4);
+  color: #e57373;
+}
+
+.tool-card .status-badge.active {
+  background-color: rgba(0, 200, 83, 0.15);
+  border: 1px solid rgba(0, 200, 83, 0.4);
+  color: #69f0ae;
+}
+
+.tool-card .status-badge.idea {
+  background-color: rgba(33, 150, 243, 0.15);
+  border: 1px solid rgba(33, 150, 243, 0.4);
+  color: #64b5f6;
 }
 
 /* --- RESPONSIVE --- */

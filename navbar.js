@@ -4,7 +4,7 @@
 (function () {
   function getImagePath() {
     const path = window.location.pathname;
-    if (path.includes('/subsites/')) {
+    if (path.includes('/subpages/')) {
       return '../images/icon.jpg';
     }
     return 'images/icon.jpg';
@@ -12,7 +12,7 @@
 
   function getIndexHref() {
     const path = window.location.pathname;
-    if (path.includes('/subsites/')) {
+    if (path.includes('/subpages/')) {
       return '../index.html';
     }
     return 'index.html';
@@ -20,10 +20,10 @@
 
   function getLightModeHref() {
     const path = window.location.pathname;
-    if (path.includes('/subsites/')) {
+    if (path.includes('/subpages/')) {
       return 'light-mode.html';
     }
-    return 'subsites/light-mode.html';
+    return 'subpages/light-mode.html';
   }
 
   const navHTML = `

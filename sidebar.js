@@ -1,35 +1,59 @@
 // sidebar.js
-// Boczne menu + obsługa mobilnego drawer'a.
+// Boczne menu + obsługa mobilnego drawer'a (zjednoczone).
 
 (function () {
+  function getPageHref(target) {
+    const isSubsite = window.location.pathname.includes('/subpages/');
+    if (isSubsite) {
+      if (target === 'index.html') {
+        return '../index.html';
+      }
+      if (target.startsWith('subpages/')) {
+        return target.substring(9); // e.g. "subpages/tools.html" -> "tools.html"
+      }
+      return target;
+    } else {
+      if (target === 'index.html') {
+        return 'index.html';
+      }
+      if (target.startsWith('subpages/')) {
+        return target;
+      }
+      return 'subpages/' + target;
+    }
+  }
+
   const sidebarHTML = `
-    <a href="../index.html" class="menu-link" data-page="../index.html">
+    <a href="${getPageHref('index.html')}" class="menu-link" data-page="index.html">
       <div class="menu-link-content">
         <span class="material-symbols-rounded">home</span>
         Intro
       </div>
     </a>
 
-    <a href="../subsites/tools.html" class="menu-link" data-page="../subsites/tools.html">
+    <a href="${getPageHref('subpages/tools.html')}" class="menu-link" data-page="tools.html">
       <div class="menu-link-content">
         <span class="material-symbols-rounded">construction</span>
         Tools I Use
       </div>
     </a>
 
-    <div class="sidebar-section-label accent">My Projects:</div>
-
-    <a href="#" class="menu-link dropdown-toggle" data-group="depot">
+    <a href="${getPageHref('subpages/roadmap.html')}" class="menu-link" data-page="roadmap.html">
       <div class="menu-link-content">
-        <span class="material-symbols-rounded">history</span>
-        DepotDowngrader
+        <span class="material-symbols-rounded">map</span>
+        Roadmap
       </div>
-      <span class="material-symbols-rounded menu-icon-right">keyboard_arrow_down</span>
     </a>
-    <div class="sub-menu" data-submenu="depot">
-      <a href="depot-info.html" data-page="depot-info.html">Info</a>
-      <a href="depot-install.html" data-page="depot-install.html">Installation</a>
-    </div>
+
+    <a href="${getPageHref('subpages/contact.html')}" class="menu-link" data-page="contact.html">
+      <div class="menu-link-content">
+        <span class="material-symbols-rounded">mail</span>
+        Contact
+      </div>
+    </a>
+
+
+    <div class="sidebar-section-label accent">My Projects:</div>
 
     <a href="#" class="menu-link dropdown-toggle" data-group="dbd">
       <div class="menu-link-content">
@@ -39,21 +63,17 @@
       <span class="material-symbols-rounded menu-icon-right">keyboard_arrow_down</span>
     </a>
     <div class="sub-menu" data-submenu="dbd">
-      <a href="dbd-info.html" data-page="dbd-info.html">Info</a>
-      <a href="dbd-install.html" data-page="dbd-install.html">Installation</a>
+      <a href="${getPageHref('dbd-info.html')}" data-page="dbd-info.html">Info</a>
+      <a href="${getPageHref('dbd-install.html')}" data-page="dbd-install.html">Installation</a>
+      <a href="${getPageHref('dbd-download.html')}" data-page="dbd-download.html">Download</a>
     </div>
 
-    <a href="#" class="menu-link dropdown-toggle" data-group="hitman">
+    <a href="${getPageHref('hitman-info.html')}" class="menu-link" data-page="hitman-info.html">
       <div class="menu-link-content">
         <span class="material-symbols-rounded">dns</span>
         Hitman Peacock Powershell
       </div>
-      <span class="material-symbols-rounded menu-icon-right">keyboard_arrow_down</span>
     </a>
-    <div class="sub-menu" data-submenu="hitman">
-      <a href="hitman-info.html" data-page="hitman-info.html">Info</a>
-      <a href="hitman-install.html" data-page="hitman-install.html">Installation</a>
-    </div>
   `;
 
   function isMobileMenu() {
@@ -127,7 +147,7 @@
     const topLevelLinks = container.querySelectorAll("a.menu-link[data-page]");
     topLevelLinks.forEach((link) => {
       const dataPage = link.getAttribute("data-page");
-      if (dataPage === currentPage || dataPage.endsWith(currentPage)) {
+      if (dataPage === currentPage) {
         link.classList.add("active");
       }
     });
@@ -136,11 +156,14 @@
     if (activeSubLink) {
       activeSubLink.classList.add("active");
       const subMenu = activeSubLink.closest(".sub-menu");
-      subMenu.style.display = "flex";
-      const group = subMenu.getAttribute("data-submenu");
-      const toggle = container.querySelector(`.dropdown-toggle[data-group="${group}"]`);
-      if (toggle) {
-        toggle.querySelector(".menu-icon-right").textContent = "keyboard_arrow_up";
+      if (subMenu) {
+        subMenu.style.display = "flex";
+        const group = subMenu.getAttribute("data-submenu");
+        const toggle = container.querySelector(`.dropdown-toggle[data-group="${group}"]`);
+        if (toggle) {
+          const rightIcon = toggle.querySelector(".menu-icon-right");
+          if (rightIcon) rightIcon.textContent = "keyboard_arrow_up";
+        }
       }
     }
 
@@ -149,13 +172,14 @@
       toggle.addEventListener("click", function (e) {
         e.preventDefault();
         const subMenu = this.nextElementSibling;
+        if (!subMenu) return;
         const arrowIcon = this.querySelector(".menu-icon-right");
         if (subMenu.style.display === "flex") {
           subMenu.style.display = "none";
-          arrowIcon.textContent = "keyboard_arrow_down";
+          if (arrowIcon) arrowIcon.textContent = "keyboard_arrow_down";
         } else {
           subMenu.style.display = "flex";
-          arrowIcon.textContent = "keyboard_arrow_up";
+          if (arrowIcon) arrowIcon.textContent = "keyboard_arrow_up";
         }
       });
     });
