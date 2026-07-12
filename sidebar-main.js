@@ -1,16 +1,16 @@
-// sidebar.js
-// Boczne menu + obsługa mobilnego drawer'a.
+// sidebar-main.js
+// Boczne menu dla index.html (w folderze głównym).
 
 (function () {
   const sidebarHTML = `
-    <a href="../index.html" class="menu-link" data-page="../index.html">
+    <a href="index.html" class="menu-link" data-page="index.html">
       <div class="menu-link-content">
         <span class="material-symbols-rounded">home</span>
         Intro
       </div>
     </a>
 
-    <a href="../subsites/tools.html" class="menu-link" data-page="../subsites/tools.html">
+    <a href="subsites/tools.html" class="menu-link" data-page="subsites/tools.html">
       <div class="menu-link-content">
         <span class="material-symbols-rounded">construction</span>
         Tools I Use
@@ -27,8 +27,8 @@
       <span class="material-symbols-rounded menu-icon-right">keyboard_arrow_down</span>
     </a>
     <div class="sub-menu" data-submenu="depot">
-      <a href="depot-info.html" data-page="depot-info.html">Info</a>
-      <a href="depot-install.html" data-page="depot-install.html">Installation</a>
+      <a href="subsites/depot-info.html" data-page="subsites/depot-info.html">Info</a>
+      <a href="subsites/depot-install.html" data-page="subsites/depot-install.html">Installation</a>
     </div>
 
     <a href="#" class="menu-link dropdown-toggle" data-group="dbd">
@@ -39,8 +39,8 @@
       <span class="material-symbols-rounded menu-icon-right">keyboard_arrow_down</span>
     </a>
     <div class="sub-menu" data-submenu="dbd">
-      <a href="dbd-info.html" data-page="dbd-info.html">Info</a>
-      <a href="dbd-install.html" data-page="dbd-install.html">Installation</a>
+      <a href="subsites/dbd-info.html" data-page="subsites/dbd-info.html">Info</a>
+      <a href="subsites/dbd-install.html" data-page="subsites/dbd-install.html">Installation</a>
     </div>
 
     <a href="#" class="menu-link dropdown-toggle" data-group="hitman">
@@ -51,8 +51,8 @@
       <span class="material-symbols-rounded menu-icon-right">keyboard_arrow_down</span>
     </a>
     <div class="sub-menu" data-submenu="hitman">
-      <a href="hitman-info.html" data-page="hitman-info.html">Info</a>
-      <a href="hitman-install.html" data-page="hitman-install.html">Installation</a>
+      <a href="subsites/hitman-info.html" data-page="subsites/hitman-info.html">Info</a>
+      <a href="subsites/hitman-install.html" data-page="subsites/hitman-install.html">Installation</a>
     </div>
   `;
 
@@ -126,12 +126,13 @@
 
     const topLevelLinks = container.querySelectorAll("a.menu-link[data-page]");
     topLevelLinks.forEach((link) => {
-      if (link.getAttribute("data-page") === currentPage) {
+      if (link.getAttribute("data-page") === currentPage || link.getAttribute("data-page") === "subsites/" + currentPage) {
         link.classList.add("active");
       }
     });
 
-    const activeSubLink = container.querySelector(`.sub-menu a[data-page="${currentPage}"]`);
+    const activeSubLink = container.querySelector(`.sub-menu a[data-page="${currentPage}"]`) || 
+                         container.querySelector(`.sub-menu a[data-page="subsites/${currentPage}"]`);
     if (activeSubLink) {
       activeSubLink.classList.add("active");
       const subMenu = activeSubLink.closest(".sub-menu");
