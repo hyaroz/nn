@@ -557,7 +557,6 @@ code {
   .sidebar-left {
     position: fixed;
     top: 45px;
-    left: 0;
     height: calc(100vh - 45px);
     height: calc(100dvh - 45px);
     width: min(280px, 85vw);
@@ -566,6 +565,7 @@ code {
     transition: transform 0.3s ease;
     border-right: 1px solid var(--border-color);
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    padding-top: 25px; /* DODANA LINIJKA: Obniża o 5px górną krawędź menu na telefonach */
   }
 
   .sidebar-left.open {
