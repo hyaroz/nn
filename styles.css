@@ -414,6 +414,55 @@ code {
   font-size: 0.98em;
 }
 
+.alert-box {
+  background-color: var(--hover-bg);
+  border: 1px solid rgba(223, 161, 104, 0.2);
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  color: var(--text-color);
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
+.alert-header .material-symbols-rounded {
+  font-size: 20px;
+  width: 20px;
+  color: var(--accent-color);
+}
+
+.alert-header strong {
+  font-size: 1.05em;
+  letter-spacing: 0.3px;
+}
+
+.alert-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.alert-box ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.alert-box ul ul {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-left: 25px;
+  list-style-type: circle;
+}
+
+.alert-box ul li:last-child {
+  margin-bottom: 0;
+}
+
 /* --- TOOLS PAGE --- */
 .page-header {
   width: 100%;

@@ -64,7 +64,7 @@
     </a>
     <div class="sub-menu" data-submenu="dbd">
       <a href="${getPageHref('dbd-info.html')}" data-page="dbd-info.html">Info</a>
-      <a href="${getPageHref('dbd-install.html')}" data-page="dbd-install.html">Installation</a>
+      <a href="${getPageHref('dbd-install.html')}" data-page="dbd-install.html">Guide</a>
       <a href="${getPageHref('dbd-download.html')}" data-page="dbd-download.html">Download</a>
     </div>
 
