@@ -31,7 +31,7 @@
       <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
         <span class="material-symbols-rounded">menu</span>
       </button>
-      <div class="site-title" onclick="window.location.href='${getIndexHref()}'">
+      <div class="site-title" onclick="window.location.href='https://hyaroz.github.io/nn/'">
         <img src="${getImagePath()}" class="site-logo" alt="Logo">
         Neron's Basement
       </div>

@@ -24,7 +24,7 @@
   }
 
   const sidebarHTML = `
-    <a href="${getPageHref('index.html')}" class="menu-link" data-page="index.html">
+    <a href="https://hyaroz.github.io/nn/" class="menu-link" data-page="index.html">
       <div class="menu-link-content">
         <span class="material-symbols-rounded">home</span>
         Intro
@@ -68,10 +68,17 @@
       <a href="${getPageHref('dbd-download.html')}" data-page="dbd-download.html">Download</a>
     </div>
 
+    <a href="${getPageHref('ost-info.html')}" class="menu-link" data-page="ost-info.html">
+      <div class="menu-link-content">
+        <span class="material-symbols-rounded">vpn_key</span>
+        OST PowerShell
+      </div>
+    </a>
+
     <a href="${getPageHref('hitman-info.html')}" class="menu-link" data-page="hitman-info.html">
       <div class="menu-link-content">
         <span class="material-symbols-rounded">dns</span>
-        Hitman Peacock Powershell
+        Peacock PowerShell
       </div>
     </a>
   `;
