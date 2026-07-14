@@ -26,6 +26,11 @@ An optimization utility that removes the engine frame rate limits in Dead by Day
 - **[Info](https://hyaroz.github.io/nn/subpages/dbd-info.html)** - Learn more about the project
 - **[Installation](https://hyaroz.github.io/nn/subpages/dbd-install.html)** - Get started
 
+### [OST PowerShell](https://hyaroz.github.io/nn/subpages/ost-info.html)
+A PowerShell script designed to automate the installation, DLL injection, and config for OpenSteamTool. Currently in early planning phase (v0.0.0).
+
+- **[Info](https://hyaroz.github.io/nn/subpages/ost-info.html)** - Learn more about the project
+
 ### [Peacock PowerShell](https://hyaroz.github.io/nn/subpages/hitman-info.html)
 A PowerShell automation script idea that will handle the entire setup of the Peacock local server emulator for the Hitman trilogy — no manual editing of host files or configuration needed. Currently in early planning phase (v0.0.0).
 
